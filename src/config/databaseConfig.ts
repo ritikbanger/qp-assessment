@@ -29,11 +29,11 @@ const dbConnectionDetails = async () => {
 			const dataSource = new DataSource(connectionOptions);
 
 			dataSource.initialize().then(() => {
-				console.log("_____initialized_____");
+				console.log("Database initialized");
 				resolve(dataSource);
 			});
 		} catch (e) {
-			console.error(">>>>>>>>>>>>>>>>>>>", e);
+			console.error("Database initialization error", e);
 			resolve(undefined);
 		}
 	});

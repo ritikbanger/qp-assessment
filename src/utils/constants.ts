@@ -16,6 +16,12 @@ export const labels = {
 	firstName: "First name",
 	id: "Id",
 	userId: "User id",
+	items: "Items are required",
+	inventory: "Inventory",
+	updateGroceryNeed: "At least one field must be provided: name or price.",
+	name: "Name",
+	price: "Price",
+	inventory_count: "Inventory Count",
 };
 
 export const apiResponse = {
@@ -33,4 +39,12 @@ export const apiResponse = {
 	AUTH_TOKEN_VERIFICATION_FAILED: "Token verification failed",
 	INVALID_AUTH_TOKEN: "Your session has expired. Please login again.",
 	SOMETHING_WENT_WRONG: "Something went wrong! please try after sometime.",
+	ITEM_CREATED_SUCCESS: "Grocery Item is created successfully",
+	ITEM_DELETION_FAILED: "Item deletion failed",
+	ITEM_DELETED_SUCCESS: "Item deleted successfully",
+	ITEM_NOT_EXIST: "No such item exists",
+	ITEM_UPDATE_SUCCESS: "Item is updated successfully",
+	SIGNUP_SUCCESS: "Signup successful",
+	NO_USER_TO_ORDER: "User does not exist, signup to place order",
+	ORDER_SUCCESS: "Order placed successfully",
 };

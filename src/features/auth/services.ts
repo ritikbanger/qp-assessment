@@ -63,10 +63,9 @@ export class AuthService {
 			}
 			return this.response;
 		} catch (error) {
-			console.error(error);
 			return {
 				success: false,
-				message: "An error occurred while logging in.",
+				message: apiResponse.LOGIN_FAILED,
 				data: error,
 			};
 		}
@@ -100,13 +99,12 @@ export class AuthService {
 			}
 			return (this.response = {
 				success: true,
-				message: "signup successful",
+				message: apiResponse.SIGNUP_SUCCESS,
 			});
 		} catch (error) {
-			console.error("signup_catch_error", error);
 			return {
 				success: false,
-				message: "An error occurred while signing up.",
+				message: apiResponse.SIGN_UP_FAILED,
 				data: error,
 			};
 		}

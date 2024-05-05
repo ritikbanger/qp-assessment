@@ -3,6 +3,7 @@ import DbConnection from "../../db/dbConnection";
 
 import GroceryItem from "../../entities/groceryItem";
 import { IAddGroceryItem } from "./interface";
+import { apiResponse } from "../../utils/constants";
 
 export class GroceryService {
 	static response: ResponseObject;
@@ -15,7 +16,7 @@ export class GroceryService {
 		return (this.response = {
 			data: groceryItem,
 			success: true,
-			message: "Grocery Item created successfully",
+			message: apiResponse.ITEM_CREATED_SUCCESS,
 		});
 	}
 
@@ -31,16 +32,15 @@ export class GroceryService {
 	static async removeGroceryItem(id: number): Promise<ResponseObject> {
 		const groceryRepository = await DbConnection.getRepository(GroceryItem);
 		const res = await groceryRepository.delete(id);
-		console.log(res);
 		if (!res.affected) {
 			return (this.response = {
 				success: false,
-				message: "Item deletion failed. ",
+				message: apiResponse.ITEM_DELETION_FAILED,
 			});
 		}
 		return (this.response = {
 			success: true,
-			message: "Item deleted successfully",
+			message: apiResponse.ITEM_DELETED_SUCCESS,
 		});
 	}
 
@@ -53,7 +53,7 @@ export class GroceryService {
 		if (!item) {
 			return (this.response = {
 				success: false,
-				message: "No Such item exists",
+				message: apiResponse.ITEM_NOT_EXIST,
 			});
 		}
 		groceryRepository.merge(item, updateData);
@@ -61,7 +61,7 @@ export class GroceryService {
 		return (this.response = {
 			data: item,
 			success: true,
-			message: "item is updated successfully",
+			message: apiResponse.ITEM_UPDATE_SUCCESS,
 		});
 	}
 
@@ -74,7 +74,7 @@ export class GroceryService {
 		if (!item) {
 			return (this.response = {
 				success: false,
-				message: "No Such item exists",
+				message: apiResponse.ITEM_NOT_EXIST,
 			});
 		}
 		item.inventory_count = inventoryCount;
@@ -82,7 +82,7 @@ export class GroceryService {
 		return (this.response = {
 			data: item,
 			success: true,
-			message: "item is updated successfully",
+			message: apiResponse.ITEM_UPDATE_SUCCESS,
 		});
 	}
 }

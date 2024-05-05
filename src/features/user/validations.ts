@@ -1,4 +1,5 @@
 import Joi from "joi";
+import { labels } from "../../utils/constants";
 
 const joiObject = Joi.object().options({ abortEarly: false });
 
@@ -11,5 +12,6 @@ export const createOrderSchema = joiObject.keys({
 			})
 		)
 		.min(1)
+		.label(labels.items)
 		.required(),
 });

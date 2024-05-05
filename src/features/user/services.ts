@@ -5,6 +5,7 @@ import Order from "../../entities/order";
 import OrderItem from "../../entities/orderItem";
 import { MoreThan } from "typeorm";
 import UserModel from "../../entities/user";
+import { apiResponse } from "../../utils/constants";
 
 export class UserGroceryService {
 	static response: ResponseObject;
@@ -34,7 +35,7 @@ export class UserGroceryService {
 		if (!user) {
 			return (this.response = {
 				success: false,
-				message: "User does not exist, signup to place order",
+				message: apiResponse.NO_USER_TO_ORDER,
 			});
 		}
 
@@ -83,7 +84,7 @@ export class UserGroceryService {
 			return {
 				data: { id: savedOrder.id },
 				success: true,
-				message: "Order placed successfully",
+				message: apiResponse.ORDER_SUCCESS,
 			};
 		} catch (error) {
 			return {
