@@ -17,7 +17,7 @@ const dbConnectionDetails = async () => {
 			username: keys.database_username,
 			password: keys.database_password,
 			database: keys.database_name,
-			synchronize: false,
+			synchronize: true,
 			logging: false,
 			entities: ["src/entities/*.ts", "src/entities/*.js"],
 			migrations: ["src/migrations/**/*{.ts,.js}"],

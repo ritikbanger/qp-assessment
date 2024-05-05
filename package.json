@@ -14,8 +14,7 @@
 		"format:check": "prettier --check 'src/**/*.{js,jsx,ts,tsx,css,scss,json}' --config ./.prettierrc",
 		"type-check": "tsc --noEmit",
 		"check:all": "npm run lint:check && npm run format:check && npm run type-check",
-		"fix:all": "npm run lint:fix && npm run format:fix",
-		"prepare": "chmod ug+x .husky/* && husky install"
+		"fix:all": "npm run lint:fix && npm run format:fix"
 	},
 	"author": "Ritik Banger <ritikbanger.dev@gmail.com>",
 	"license": "ISC",

@@ -1,12 +1,15 @@
 import express, { Express } from "express";
 import cors from "cors";
 import envConfig from "./src/config/envConfig";
+import dbConnectionDetails from "./src/config/databaseConfig";
 
 const app: Express = express();
 
 const config = envConfig();
 
 const { port } = config;
+
+dbConnectionDetails();
 
 app.use(cors());
 

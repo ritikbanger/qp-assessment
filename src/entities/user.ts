@@ -4,7 +4,10 @@ import {
 	Column,
 	UpdateDateColumn,
 	CreateDateColumn,
+	OneToMany,
 } from "typeorm";
+
+import Order from "./order";
 
 export interface IUserSchema {
 	id: number;
@@ -16,7 +19,7 @@ export interface IUserSchema {
 }
 
 @Entity("users")
-class UserModel implements IUserSchema {
+export class UserModel {
 	@PrimaryGeneratedColumn()
 	id: number;
 
@@ -52,6 +55,9 @@ class UserModel implements IUserSchema {
 
 	@UpdateDateColumn()
 	updated_ts: Date;
+
+	@OneToMany(() => Order, (order) => order.user)
+	orders: Order[];
 }
 
 export default UserModel;
