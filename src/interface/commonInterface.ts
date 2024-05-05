@@ -17,4 +17,5 @@ export interface envData {
 	database_username: string;
 	database_password: string;
 	database_name: string;
+	jwt_secret: string;
 }
