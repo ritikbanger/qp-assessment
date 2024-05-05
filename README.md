@@ -147,3 +147,4 @@
 ### Note
 
 To run: docker-compose up
+base url: http://localhost:3001
