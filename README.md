@@ -146,5 +146,6 @@
 
 ### Note
 
-- To run: docker-compose up
+- To run with docker: docker-compose up
+- To run without docker (need of creation of a PG db): npm start
 - Base url: http://localhost:3001
