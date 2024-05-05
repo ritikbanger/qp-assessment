@@ -29,6 +29,7 @@ export const apiResponse = {
 	LOGIN_FAILED: "Login Failed",
 	SIGN_UP_FAILED: "Signup Failed",
 	NO_AUTH_TOKEN: "No Token Found",
+	UNAUTHORIZED_USER: "User is unauthorized to perform this action",
 	AUTH_TOKEN_VERIFICATION_FAILED: "Token verification failed",
 	INVALID_AUTH_TOKEN: "Your session has expired. Please login again.",
 	SOMETHING_WENT_WRONG: "Something went wrong! please try after sometime.",

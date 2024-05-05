@@ -6,13 +6,19 @@ import {
 	listAvailableItemsController,
 } from "./controller";
 import { createOrderSchema } from "./validations";
+import isAuthorized from "../../utils/isAuthorized";
 
 export const userRoutes = express.Router();
 
-userRoutes.get("/groceries", HandleErrors(listAvailableItemsController));
+userRoutes.get(
+	"/groceries",
+	isAuthorized,
+	HandleErrors(listAvailableItemsController)
+);
 
 userRoutes.post(
 	"/order",
 	schemaValidation(createOrderSchema),
+	isAuthorized,
 	HandleErrors(createOrderController)
 );
