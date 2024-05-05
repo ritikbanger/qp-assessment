@@ -4,6 +4,7 @@ import envConfig from "./src/config/envConfig";
 import dbConnectionDetails from "./src/config/databaseConfig";
 import { authRoutes } from "./src/features/auth/routes";
 import { groceryRoutes } from "./src/features/admin/routes";
+import { userRoutes } from "./src/features/user/routes";
 
 const app: Express = express();
 
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 
 app.use(authRoutes);
 app.use(groceryRoutes);
+app.use(userRoutes);
 
 app.listen(port, () => {
 	console.log(`⚡️[server]: Server is running at http://localhost:${port}`);

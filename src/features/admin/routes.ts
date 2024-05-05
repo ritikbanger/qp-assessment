@@ -22,18 +22,21 @@ groceryRoutes.post(
 	HandleErrors(addGroceryItemController)
 );
 
-groceryRoutes.get("/grocery-items", getAllGroceryItemsController);
+groceryRoutes.get("/grocery-items", HandleErrors(getAllGroceryItemsController));
 
-groceryRoutes.delete("/grocery-item/:id", removeGroceryItemController);
+groceryRoutes.delete(
+	"/grocery-item/:id",
+	HandleErrors(removeGroceryItemController)
+);
 
 groceryRoutes.put(
 	"/grocery-item/:id",
 	schemaValidation(updateGroceryItemValidationSchema),
-	updateGroceryItemController
+	HandleErrors(updateGroceryItemController)
 );
 
 groceryRoutes.patch(
 	"/grocery-item/:id/inventory",
 	schemaValidation(manageInventoryValidationSchema),
-	manageInventoryController
+	HandleErrors(manageInventoryController)
 );

@@ -12,5 +12,9 @@
 	},
 	"include": ["**/*"],
 	"exclude": ["./node_modules"],
+	"paths": {
+		"*": ["./src/types/global.d.ts"]
+	},
+	"files": ["./src/types/global.d.ts"],
 	"lib": ["es2015"]
 }

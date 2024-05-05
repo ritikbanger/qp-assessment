@@ -27,6 +27,12 @@ class DbConnection {
 		const repository = dbConnection.createQueryRunner();
 		return repository;
 	}
+
+	public async getManager() {
+		const dbConnection = await this.getDataSource();
+		const manager = dbConnection.manager;
+		return manager;
+	}
 }
 
 export default new DbConnection();
