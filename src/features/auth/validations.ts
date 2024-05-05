@@ -1,6 +1,11 @@
 import Joi from "joi";
 
-import { labels, emailRegex, passwordRegex } from "../../utils/constants";
+import {
+	labels,
+	emailRegex,
+	passwordRegex,
+	ACCOUNT_TYPE,
+} from "../../utils/constants";
 
 const joiObject = Joi.object().options({ abortEarly: false });
 export const emailValidation = joiObject.keys({
@@ -16,7 +21,10 @@ export const nameValidation = joiObject.keys({
 });
 
 export const accountTypeValidation = joiObject.keys({
-	account_type: Joi.string().label(labels.accountType).required(),
+	account_type: Joi.string()
+		.valid(ACCOUNT_TYPE.ADMIN, ACCOUNT_TYPE.USER)
+		.required()
+		.label(labels.accountType),
 });
 
 export const signInValidationSchema = Joi.object()

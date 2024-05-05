@@ -8,6 +8,7 @@ import {
 } from "typeorm";
 
 import Order from "./order";
+import { ACCOUNT_TYPE } from "../utils/constants";
 
 export interface IUserSchema {
 	id: number;
@@ -46,9 +47,11 @@ export class UserModel {
 	password: string;
 
 	@Column({
-		length: 50,
+		type: "enum",
+		enum: ACCOUNT_TYPE,
+		default: ACCOUNT_TYPE.USER,
 	})
-	account_type: string;
+	account_type: ACCOUNT_TYPE;
 
 	@CreateDateColumn()
 	created_ts: Date;

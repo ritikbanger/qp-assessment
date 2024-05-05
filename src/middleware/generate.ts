@@ -1,10 +1,11 @@
 import jwt from "jsonwebtoken";
 import envConfig from "../config/envConfig";
+import { ACCOUNT_TYPE } from "../utils/constants";
 
 interface ITokenGenerate {
 	email: string;
 	id: number;
-	account_type: string;
+	account_type: ACCOUNT_TYPE;
 }
 
 const createToken = async (user: ITokenGenerate): Promise<string> => {

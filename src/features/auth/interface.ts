@@ -1,7 +1,9 @@
+import { ACCOUNT_TYPE } from "../../utils/constants";
+
 export interface ILogin {
 	email: string;
 	password: string;
-	account_type?: string;
+	account_type?: ACCOUNT_TYPE;
 }
 
 export interface ISignup {
@@ -9,5 +11,5 @@ export interface ISignup {
 	last_name: string;
 	email: string;
 	password: string;
-	account_type: string;
+	account_type: ACCOUNT_TYPE;
 }
