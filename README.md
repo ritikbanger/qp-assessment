@@ -146,5 +146,5 @@
 
 ### Note
 
-To run: docker-compose up
-base url: http://localhost:3001
+- To run: docker-compose up
+- Base url: http://localhost:3001
